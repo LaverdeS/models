@@ -17,12 +17,17 @@
 import functools
 import tensorflow as tf
 
-from deeplab.core import nas_network
-from deeplab.core import resnet_v1_beta
-from deeplab.core import xception
+import core.nas_network as nas_network
+import core.resnet_v1_beta as resnet_v1_beta
+import core.xception as xception
 from tensorflow.contrib.slim.nets import resnet_utils
-from nets.mobilenet import mobilenet_v2
+#from research.slim.nets.mobilenet import mobilenet_v2
+import sys
+path = "C:/Users/SEBASTIAN LAVERDE/Documents/GitHub/models/research/slim/nets/mobilenet"
+sys.path.insert(0,path)
 
+import mobilenet_v2
+#\research\syntaxnet\tensorflow\tensorflow\contrib\slim
 
 slim = tf.contrib.slim
 
@@ -75,6 +80,7 @@ def _mobilenet_v2(net,
 
 
 # A map from network name to network function.
+
 networks_map = {
     'mobilenet_v2': _mobilenet_v2,
     'resnet_v1_50': resnet_v1_beta.resnet_v1_50,

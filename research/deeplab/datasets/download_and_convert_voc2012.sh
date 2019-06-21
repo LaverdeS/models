@@ -48,6 +48,7 @@ download_and_uncompress() {
   if [ ! -f "${FILENAME}" ]; then
     echo "Downloading ${FILENAME} to ${WORK_DIR}"
     wget -nd -c "${BASE_URL}/${FILENAME}"
+#it was wget before
   fi
   echo "Uncompressing ${FILENAME}"
   tar -xf "${FILENAME}"

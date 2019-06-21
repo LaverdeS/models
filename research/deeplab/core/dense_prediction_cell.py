@@ -26,7 +26,7 @@ from __future__ import print_function
 
 import tensorflow as tf
 
-from deeplab.core import utils
+import core.utils as utils
 
 slim = tf.contrib.slim
 
